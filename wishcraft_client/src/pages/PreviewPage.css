@@ -1,0 +1,31 @@
+.preview-container {
+  min-height: 100vh;
+  background: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.preview-card {
+  width: 500px;
+  background: #1a0702;
+  padding: 30px;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.preview-card img {
+  width: 100%;
+  border-radius: 12px;
+}
+
+.preview-card button {
+  padding: 16px;
+  border: none;
+  border-radius: 10px;
+  background: #ff4b1f;
+  color: white;
+  cursor: pointer;
+}
