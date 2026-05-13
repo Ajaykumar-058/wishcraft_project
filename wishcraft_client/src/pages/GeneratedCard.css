@@ -44,6 +44,13 @@ body{
   border-radius:14px;
 
   cursor:pointer;
+
+  transition:0.3s;
+}
+
+.back-btn:hover{
+
+  background:#222;
 }
 
 .generated-top h1{
@@ -237,6 +244,8 @@ body{
   cursor:pointer;
 
   font-weight:600;
+
+  transition:0.3s;
 }
 
 .share-btn{
@@ -246,6 +255,11 @@ body{
   color:white;
 }
 
+.share-btn:hover{
+
+  transform:scale(1.02);
+}
+
 .download-btn{
 
   background:#ff5b2e;
@@ -253,11 +267,21 @@ body{
   color:white;
 }
 
+.download-btn:hover{
+
+  transform:scale(1.02);
+}
+
 .regen-btn{
 
   background:#2a2a2a;
 
   color:white;
+}
+
+.regen-btn:hover{
+
+  background:#333;
 }
 
 .social-section{
@@ -287,6 +311,24 @@ body{
   padding:18px 24px;
 
   border-radius:14px;
+
+  cursor:pointer;
+
+  transition:0.3s;
+
+  user-select:none;
+}
+
+.social-icons div:hover{
+
+  background:#333;
+
+  transform:scale(1.05);
+}
+
+.social-icons div:active{
+
+  transform:scale(0.96);
 }
 
 @media(max-width:1000px){
@@ -294,5 +336,39 @@ body{
   .generated-layout{
 
     grid-template-columns:1fr;
+  }
+
+  .generated-top{
+
+    flex-direction:column;
+
+    gap:20px;
+
+    text-align:center;
+  }
+
+  .generated-top h1{
+
+    font-size:34px;
+  }
+
+  .generated-card{
+
+    height:500px;
+  }
+
+  .card-center h2{
+
+    font-size:34px;
+  }
+
+  .share-panel h2{
+
+    font-size:34px;
+  }
+
+  .share-panel p{
+
+    font-size:16px;
   }
 }

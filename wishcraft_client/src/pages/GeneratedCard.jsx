@@ -1,7 +1,5 @@
 import html2canvas from "html2canvas";
-
 import { useNavigate } from "react-router-dom";
-
 import "./GeneratedCard.css";
 
 function GeneratedCard() {
@@ -67,11 +65,61 @@ function GeneratedCard() {
     () => {
 
       window.open(
-
         "https://wa.me/",
-
         "_blank"
       );
+    };
+
+  // SHARE INSTAGRAM
+
+  const shareInstagram =
+    () => {
+
+      window.open(
+        "https://instagram.com",
+        "_blank"
+      );
+    };
+
+  // SHARE EMAIL
+
+  const shareEmail =
+    () => {
+
+      window.location.href =
+        "mailto:?subject=WishCraft Card&body=Check out my card!";
+    };
+
+  // SHARE MORE
+
+  const shareMore =
+    async () => {
+
+      if (navigator.share) {
+
+        try {
+
+          await navigator.share({
+
+            title: "WishCraft",
+
+            text: "Check out my card!",
+
+            url: window.location.href,
+
+          });
+
+        } catch (error) {
+
+          console.log(error);
+        }
+
+      } else {
+
+        alert(
+          "Sharing not supported on this device"
+        );
+      }
     };
 
   return (
@@ -284,25 +332,41 @@ function GeneratedCard() {
 
             <div className="social-icons">
 
-              <div>
+              <div
+                onClick={
+                  shareWhatsApp
+                }
+              >
 
                 WhatsApp
 
               </div>
 
-              <div>
+              <div
+                onClick={
+                  shareInstagram
+                }
+              >
 
                 Instagram
 
               </div>
 
-              <div>
+              <div
+                onClick={
+                  shareEmail
+                }
+              >
 
                 Email
 
               </div>
 
-              <div>
+              <div
+                onClick={
+                  shareMore
+                }
+              >
 
                 More
 
