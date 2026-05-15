@@ -28,7 +28,7 @@ app.use(
   cors({
 
     origin:
-      "https://wishcraft-project-gy5g.vercel.app/",
+      "https://wishcraft-project-gy5g.vercel.app",
 
     credentials: true
   })
