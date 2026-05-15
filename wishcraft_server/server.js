@@ -24,13 +24,12 @@ const app = express();
 /* MIDDLEWARE */
 
 app.use(
-
   cors({
-
-    origin:
+    origin: [
       "https://wishcraft-project-gy5g.vercel.app",
-
-    credentials: true
+      "http://localhost:5173"
+    ],
+    credentials: true,
   })
 );
 
