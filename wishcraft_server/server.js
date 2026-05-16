@@ -20,6 +20,9 @@ require("./routes/templateRoutes");
 const uploadRoutes =
 require("./routes/uploadRoutes");
 
+const userRoutes =
+require("./routes/userRoutes");
+
 /* APP */
 
 const app = express();
@@ -67,6 +70,13 @@ app.use(
 app.use(
   "/api/upload",
   uploadRoutes
+);
+
+/* USERS ROUTE */
+
+app.use(
+  "/api/users",
+  userRoutes
 );
 
 /* TEST ROUTE */
