@@ -1,434 +1,141 @@
-# README.md
+# WishCraft
 
-````md
-# 🎉 WishCraft
+WishCraft is a modern full-stack web application for creating personalized greetings for birthdays, festivals, and special occasions.
 
-WishCraft is a full-stack personalized greetings and wishes application that allows users to create custom greeting images using their profile name and photo.
+The application supports Google OAuth login, email-password authentication, and guest login features.
 
-Users can:
-- Sign Up / Sign In
-- Continue as Guest
-- Upload Profile Images
-- View Greeting Templates
-- Generate Personalized Greetings
-- Share Images directly to social platforms
+It is developed using React.js, Node.js, Express.js, Neon PostgreSQL, and Cloudinary.
 
-Built using **React**, **Node.js**, **Express**, **Neon PostgreSQL**, and **Cloudinary**.
+The platform provides a secure, responsive, and modern dark-themed user experience.
 
 ---
 
-# 🚀 Features
+# Features
 
-## 🔐 Authentication
-- Email Sign Up & Sign In
-- Google Authentication
-- Guest Access
-- JWT Authentication
-- Secure Password Hashing
-
----
-
-## 👤 User Features
-- Profile Setup
-- Upload Profile Picture
-- Personalized Greeting Cards
-- Live Preview
-- Share Greetings
-- Responsive UI
+* Google OAuth Authentication
+* Email & Password Login
+* Guest Login
+* JWT Authentication
+* Responsive UI Design
+* Dark Theme Interface
+* Cloud Image Storage
+* Secure Backend APIs
 
 ---
 
-## 🖼️ Image Features
-- Greeting Templates
-- Dynamic Name Overlay
-- Profile Image Overlay
-- Cloudinary Image Storage
-- Optimized CDN Delivery
-
----
-
-## 💎 Premium Features
-- Premium Greeting Templates
-- Subscription Popup
-- Free vs Premium Content Separation
-
----
-
-# 🛠️ Tech Stack
+# Tech Stack
 
 ## Frontend
-- React.js
-- React Router DOM
-- Axios
-- Tailwind CSS / CSS
-- Vite
+
+* React.js
+* React Router DOM
+* Axios
+* CSS3
+* oAuth Google authentication
 
 ## Backend
-- Node.js
-- Express.js
-- PostgreSQL
-- Neon Database
-- JWT
-- bcryptjs
-- Multer
+
+* Node.js
+* Express.js
+* JWT Authentication
+
+## Database
+
+* Neon PostgreSQL
 
 ## Cloud Services
-- Neon PostgreSQL
-- Cloudinary
+
+* Cloudinary
 
 ---
 
-# ☁️ Services Used
+# GitHub Repository
 
-## 🐘 Neon PostgreSQL
-Used for:
-- User Authentication
-- User Profiles
-- Template Data
-- Premium Status
-
-### Advantages
-- Serverless PostgreSQL
-- Fast & Scalable
-- Reliable Cloud Database
+[https://github.com/Ajaykumar-058/wishcraft_project](https://github.com/Ajaykumar-058/wishcraft_project)
 
 ---
 
-## 🖼️ Cloudinary
-Used for:
-- Profile Image Uploads
-- Greeting Template Storage
-- Image Optimization
-- CDN Delivery
+# Demo Video
 
-### Advantages
-- Secure Cloud Storage
-- Fast Image Delivery
-- Automatic Optimization
+https://www.loom.com/share/5e6def9b4d3f43dca9acb0636a3b0802 
 
 ---
 
-server deployements
-https://wishcraft-project-2.onrender.com/api/users  (Users list)
+# Project Setup
 
-https://wishcraft-project-2.onrender.com/api/templates
-
-# 📁 Project Structure
+## Frontend Setup
 
 ```bash
-wishcraft/
-│
-├── backend/
-│   ├── controllers/
-│   ├── routes/
-│   ├── middleware/
-│   ├── models/
-│   ├── config/
-│   ├── utils/
-│   ├── uploads/
-│   ├── server.js
-│   ├── package.json
-│   └── .env
-│
-├── wishcraft_client/
-│   ├── node_modules/
-│   ├── public/
-│   │
-│   ├── src/
-│   │   ├── assets/
-│   │   ├── components/
-│   │   ├── pages/
-│   │   ├── App.css
-│   │   ├── App.jsx
-│   │   ├── index.css
-│   │   └── main.jsx
-│   │
-│   ├── .gitignore
-│   ├── eslint.config.js
-│   ├── index.html
-│   ├── package-lock.json
-│   ├── package.json
-│   └── README.md
-│
-├── README.md
-└── package.json
-````
-
----
-
-# ⚡ Getting Started
-
-# 1️⃣ Clone Repository
-
-```bash
-git clone https://github.com/your-username/wishcraft.git
-cd wishcraft
-```
-
----
-
-# 2️⃣ Backend Setup
-
-```bash
-cd backend
 npm install
+npm run dev
+```
+
+## Backend Setup
+
+```bash
+npm install
+node server.js
 ```
 
 ---
+Documentation : 
+https://drive.google.com/file/d/1YzuN73eNGEbJYsqYoP686-ETJRhWNOgS/view?usp=sharing
 
-# 🔑 Environment Variables
+# Environment Variables
 
-Create a `.env` file inside the backend folder.
+## Frontend
 
 ```env
-PORT=5000
+VITE_GOOGLE_CLIENT_ID=your_google_client_id
+```
 
-DATABASE_URL=your_neon_database_url
+## Backend
 
+```env
 JWT_SECRET=your_secret_key
-
-CLIENT_URL=http://localhost:5173
-
+DATABASE_URL=your_neon_database_url
 CLOUDINARY_CLOUD_NAME=your_cloud_name
 CLOUDINARY_API_KEY=your_api_key
 CLOUDINARY_API_SECRET=your_api_secret
 ```
 
 ---
+Neon database 
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/67a179c4-a275-4f97-980c-e235b58d143c" />
 
-# ▶️ Start Backend Server
+<img width="1634" height="451" alt="image" src="https://github.com/user-attachments/assets/7fe4261e-4e4f-4cc2-af00-ea10dc74ad58" />
 
-```bash
-npm run dev
-```
 
-Backend runs at:
 
-```bash
-http://localhost:5000
-```
+cloudinary production environment 
 
----
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/71658374-1a2e-49fc-849b-e36172a39485" />
 
-# 3️⃣ Frontend Setup
+* I used these databases and cloud services because they are scalable, secure, and suitable for production environments.
 
-Open a new terminal:
+
+# Folder Structure
 
 ```bash
-cd wishcraft_client
-npm install
+wishcraft_project/
+│
+├── frontend/
+│   ├── src/
+│   ├── components/
+│   ├── pages/
+│   └── assets/
+│
+├── backend/
+│   ├── routes/
+│   ├── controllers/
+│   ├── middleware/
+│   └── server.js
+│
+└── README.md
 ```
 
 ---
 
-# ▶️ Start Frontend
-
-```bash
-npm run dev
-```
-
-Frontend runs at:
-
-```bash
-http://localhost:5173
-```
-
----
-
-# 🔐 Authentication Flow
-
-```text
-First Time User
-    ↓
-Sign Up
-    ↓
-Profile Setup
-    ↓
-Home Page
-
-Returning User
-    ↓
-Sign In
-    ↓
-Home Page
-
-Google User
-    ↓
-Google Authentication
-    ↓
-Home Page
-
-Guest User
-    ↓
-Skip Authentication
-    ↓
-Home Page
-```
-
----
-
-# 📡 API Endpoints
-
-## Authentication Routes
-
-| Method | Endpoint             | Description      |
-| ------ | -------------------- | ---------------- |
-| POST   | `/api/auth/register` | Register User    |
-| POST   | `/api/auth/login`    | Login User       |
-| GET    | `/api/auth/me`       | Get Current User |
-
----
-
-## Image Routes
-
-| Method | Endpoint         | Description     |
-| ------ | ---------------- | --------------- |
-| POST   | `/api/upload`    | Upload Image    |
-| GET    | `/api/templates` | Fetch Templates |
-
----
-
-# 🖼️ Personalized Greeting Flow
-
-```text
-User Selects Template
-        ↓
-Profile Name + Photo Loaded
-        ↓
-Overlay Applied Dynamically
-        ↓
-Final Greeting Generated
-        ↓
-Share to Social Media
-```
-
----
-
-# 📤 Sharing Features
-
-Users can share generated greetings using:
-
-* WhatsApp
-* Instagram
-* Email
-* Native Share Sheet
-
----
-
-# 🚀 Deployment
-
-## Frontend
-
-* Vercel
-* Netlify
-
-## Backend
-
-* Render
-* Railway
-
-## Database
-
-* Neon PostgreSQL
-
-## Image Storage
-
-* Cloudinary
-
----
-
-# 🔒 Security Features
-
-* JWT Authentication
-* Password Encryption
-* Protected Routes
-* Environment Variables
-* Secure Image Uploads
-* CORS Protection
-
----
-
-# 🧠 Challenges Faced
-
-* Dynamic image overlay rendering
-* Responsive greeting positioning
-* Secure image uploads with Cloudinary
-* Managing authentication flow
-* Optimizing image loading speed
-
----
-
-# 🔮 Future Improvements
-
-* AI Greeting Generator
-* Video Greetings
-* Payment Integration
-* Admin Dashboard
-* User Analytics
-* Multi-language Support
-
----
-
-# 🧪 Available Scripts
-
-## Backend
-
-```bash
-npm run dev
-npm start
-```
-
-## Frontend
-
-```bash
-npm run dev
-npm run build
-```
-
----
-
-# 📸 Screenshots
-
-Add screenshots inside:
-
-```bash
-/public/screenshots/
-```
-
----
-
-# 🤝 Contributing
-
-Contributions are welcome!
-
-```bash
-git checkout -b feature/NewFeature
-git commit -m "Added New Feature"
-git push origin feature/NewFeature
-```
-
-Then open a Pull Request 🚀
-
----
-
-# 📄 License
-
-This project is licensed under the MIT License.
-
----
-
-# 👨‍💻 Author
-
-Developed with ❤️ by Your Name
-
-GitHub:
-[https://github.com/your-username](https://github.com/your-username)
-
----
-
-# ⭐ Support
-
-If you like this project, give it a ⭐ on GitHub!
-
-```
-```
+# Author
+f
+Ajay Kumar    here also add the challenges faced and  future improvements
