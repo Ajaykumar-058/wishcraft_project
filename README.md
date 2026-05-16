@@ -42,6 +42,8 @@ The platform provides a secure, responsive, and modern dark-themed user experien
 ## Database
 
 * Neon PostgreSQL
+* https://wishcraft-project-2.onrender.com/api/users  (Deployment)
+* https://wishcraft-project-2.onrender.com/api/templates 
 
 ## Cloud Services
 
