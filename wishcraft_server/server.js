@@ -24,16 +24,27 @@ const app = express();
 /* MIDDLEWARE */
 
 app.use(
+
   cors({
+
     origin: [
+
       "https://wishcraft-project-gy5g.vercel.app",
+
       "http://localhost:5173"
     ],
+
     credentials: true,
   })
 );
 
 app.use(express.json());
+
+app.use(
+  express.urlencoded({
+    extended: true
+  })
+);
 
 /* API ROUTES */
 
@@ -59,6 +70,19 @@ app.get("/", (req, res) => {
   res.send(
     "WishCraft API Running"
   );
+});
+
+/* ERROR HANDLER */
+
+app.use((err, req, res, next) => {
+
+  console.log(err);
+
+  res.status(500).json({
+
+    message:
+      "Internal Server Error"
+  });
 });
 
 /* SERVER */

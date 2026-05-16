@@ -4,6 +4,8 @@ require("fs");
 const cloudinary =
 require("../config/cloudinary");
 
+/* UPLOAD PROFILE */
+
 const uploadProfile =
 async (req, res) => {
 
@@ -14,6 +16,8 @@ async (req, res) => {
     if (!req.file) {
 
       return res.status(400).json({
+
+        success: false,
 
         message:
           "No image uploaded"
@@ -29,24 +33,31 @@ async (req, res) => {
 
         {
           folder:
-            "wishcraft_profiles"
+            "wishcraft_profiles",
         }
       );
 
     // DELETE LOCAL FILE
 
-    fs.unlinkSync(
-      req.file.path
-    );
+    if (
+      fs.existsSync(
+        req.file.path
+      )
+    ) {
 
-    // SEND RESPONSE
+      fs.unlinkSync(
+        req.file.path
+      );
+    }
+
+    // RESPONSE
 
     res.status(200).json({
 
       success: true,
 
       imageUrl:
-        result.secure_url
+        result.secure_url,
     });
 
   } catch (err) {
@@ -64,5 +75,6 @@ async (req, res) => {
 };
 
 module.exports = {
+
   uploadProfile
 };

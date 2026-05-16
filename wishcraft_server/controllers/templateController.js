@@ -1,29 +1,40 @@
-const pool = require("../config/db");
+const pool =
+require("../config/db");
 
-const getTemplates = async (
-  req,
-  res
-) => {
+/* GET ALL TEMPLATES */
+
+const getTemplates =
+async (req, res) => {
 
   try {
 
     const result =
       await pool.query(
-        "SELECT * FROM templates"
+
+        `
+        SELECT *
+        FROM templates
+        ORDER BY id DESC
+        `
       );
 
-    res.json(result.rows);
+    res.status(200).json(
+      result.rows
+    );
 
   } catch (err) {
 
     console.log(err);
 
     res.status(500).json({
-      message: "Server Error"
+
+      message:
+        "Failed to fetch templates"
     });
   }
 };
 
 module.exports = {
+
   getTemplates
 };

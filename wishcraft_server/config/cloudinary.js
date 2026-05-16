@@ -1,6 +1,8 @@
 const cloudinary =
 require("cloudinary").v2;
 
+require("dotenv").config();
+
 /* CONFIG */
 
 cloudinary.config({
@@ -14,10 +16,10 @@ cloudinary.config({
   api_secret:
     process.env.API_SECRET,
 
-  secure: true
+  secure: true,
 });
 
 /* EXPORT */
 
 module.exports =
-cloudinary;
+  cloudinary;

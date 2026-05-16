@@ -8,62 +8,51 @@ const path =
 require("path");
 
 const {
+
   uploadProfile
+
 } = require(
+
   "../controllers/uploadController"
 );
 
 const router =
 express.Router();
 
-/* MULTER STORAGE */
+/* STORAGE */
 
 const storage =
 multer.diskStorage({
 
-  destination: (
+  destination:
+    (req, file, cb) => {
 
-    req,
-    file,
-    cb
+      cb(
+        null,
+        "uploads/"
+      );
+    },
 
-  ) => {
+  filename:
+    (req, file, cb) => {
 
-    cb(
-      null,
-      "uploads/"
-    );
-  },
+      cb(
 
-  filename: (
+        null,
 
-    req,
-    file,
-    cb
+        Date.now() +
 
-  ) => {
-
-    cb(
-
-      null,
-
-      Date.now() +
-      path.extname(
-        file.originalname
-      )
-    );
-  }
+        path.extname(
+          file.originalname
+        )
+      );
+    },
 });
 
 /* FILE FILTER */
 
-const fileFilter = (
-
-  req,
-  file,
-  cb
-
-) => {
+const fileFilter =
+(req, file, cb) => {
 
   if (
 
@@ -80,7 +69,7 @@ const fileFilter = (
     cb(
 
       new Error(
-        "Only images allowed"
+        "Only image files allowed"
       ),
 
       false
@@ -95,7 +84,13 @@ multer({
 
   storage,
 
-  fileFilter
+  fileFilter,
+
+  limits: {
+
+    fileSize:
+      5 * 1024 * 1024,
+  },
 });
 
 /* ROUTE */
@@ -104,9 +99,12 @@ router.post(
 
   "/profile",
 
-  upload.single("image"),
+  upload.single(
+    "image"
+  ),
 
   uploadProfile
 );
 
-module.exports = router;
+module.exports =
+  router;
