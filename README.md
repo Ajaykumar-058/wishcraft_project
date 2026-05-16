@@ -108,6 +108,11 @@ Used for:
 
 ---
 
+server deployements
+https://wishcraft-project-2.onrender.com/api/users  (Users list)
+
+https://wishcraft-project-2.onrender.com/api/templates
+
 # 📁 Project Structure
 
 ```bash
