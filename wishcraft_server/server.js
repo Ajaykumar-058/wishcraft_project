@@ -6,6 +6,9 @@ require("express");
 const cors =
 require("cors");
 
+const fs =
+require("fs");
+
 /* ROUTES */
 
 const authRoutes =
@@ -21,6 +24,15 @@ require("./routes/uploadRoutes");
 
 const app = express();
 
+/* CREATE UPLOADS FOLDER */
+
+if (
+  !fs.existsSync("uploads")
+) {
+
+  fs.mkdirSync("uploads");
+}
+
 /* MIDDLEWARE */
 
 app.use(
@@ -29,9 +41,9 @@ app.use(
 
     origin: [
 
-      "https://wishcraft-project-gy5g.vercel.app",
+      "http://localhost:5173",
 
-      "http://localhost:5173"
+      "https://wishcraft-project-gy5g.vercel.app"
     ],
 
     credentials: true,
@@ -39,12 +51,6 @@ app.use(
 );
 
 app.use(express.json());
-
-app.use(
-  express.urlencoded({
-    extended: true
-  })
-);
 
 /* API ROUTES */
 
@@ -70,19 +76,6 @@ app.get("/", (req, res) => {
   res.send(
     "WishCraft API Running"
   );
-});
-
-/* ERROR HANDLER */
-
-app.use((err, req, res, next) => {
-
-  console.log(err);
-
-  res.status(500).json({
-
-    message:
-      "Internal Server Error"
-  });
 });
 
 /* SERVER */
